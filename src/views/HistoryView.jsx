@@ -12,7 +12,7 @@ function ReviewFromHistory({ session: s, idx: ri, onNav, onBack }) {
   const choices = ["A", "B", "C", "D"];
   return (
     <div style={{ minHeight: "100vh", background: C.bg, fontFamily: ff, color: C.tx, display: "flex", flexDirection: "column" }}>
-      <div style={{ padding: `20px ${PAD}px 8px`, display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", flexShrink: 0 }}>
+      <div style={{ padding: `20px ${PAD} 8px`, display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", flexShrink: 0 }}>
         <Back onClick={onBack} label="Session" />
         <span style={{ fontSize: 13, fontWeight: 600, textAlign: "center" }}>
           Review: {ri + 1} <span style={{ color: C.tx3, fontWeight: 400 }}>/ {rd.length}</span>
@@ -23,7 +23,7 @@ function ReviewFromHistory({ session: s, idx: ri, onNav, onBack }) {
           </span>
         </div>
       </div>
-      <div style={{ padding: `0 ${PAD}px 16px`, display: "grid", gridTemplateColumns: `repeat(${rd.length}, 1fr)`, gap: 3, flexShrink: 0 }}>
+      <div style={{ padding: `0 ${PAD} 16px`, display: "grid", gridTemplateColumns: `repeat(${rd.length}, 1fr)`, gap: 3, flexShrink: 0 }}>
         {rd.map((rr, i) => {
           const cur = i === ri;
           let bd = C.bdr, co = C.tx3;
@@ -40,7 +40,7 @@ function ReviewFromHistory({ session: s, idx: ri, onNav, onBack }) {
           );
         })}
       </div>
-      <div style={{ flex: 1, padding: `0 ${PAD}px 28px`, width: "100%", boxSizing: "border-box" }}>
+      <div style={{ flex: 1, padding: `0 ${PAD} 28px`, width: "100%", boxSizing: "border-box" }}>
         <div style={{ fontSize: 11, color: C.tx2, fontWeight: 600, textTransform: "uppercase", letterSpacing: ".07em", marginBottom: 8 }}>{r.skill || "Skill"}</div>
         <div style={{ padding: "16px 20px", background: C.sf, borderRadius: 8, border: `1px solid ${C.bdr}`, marginBottom: 16 }}>
           <span style={{ color: C.tx3, fontSize: 13 }}>Question text placeholder</span>

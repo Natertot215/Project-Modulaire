@@ -1,12 +1,22 @@
 export const C = {
-  bg: "#191919", sf: "#222222", sf2: "#2a2a2a", sf3: "#333333",
-  bdr: "#333333", bdr2: "#444444",
-  tx: "#e8e8e8", tx2: "#a0a0a0", tx3: "#666666",
-  sel: "#ffffff", selDim: "rgba(255,255,255,0.08)",
-  ok: "#7ec89a", okDim: "rgba(126,200,154,0.12)",
-  bad: "#d98a8a", badDim: "rgba(217,138,138,0.12)",
-  warn: "#d4b876", warnDim: "rgba(212,184,118,0.12)",
+  bg:      "var(--sat-bg)",
+  sf:      "var(--sat-sf)",
+  sf2:     "var(--sat-sf2)",
+  sf3:     "var(--sat-sf3)",
+  bdr:     "var(--sat-bdr)",
+  bdr2:    "var(--sat-bdr2)",
+  tx:      "var(--sat-tx)",
+  tx2:     "var(--sat-tx2)",
+  tx3:     "var(--sat-tx3)",
+  sel:     "var(--sat-sel)",
+  selDim:  "var(--sat-sel-dim)",
+  ok:      "var(--sat-ok)",
+  okDim:   "var(--sat-ok-dim)",
+  bad:     "var(--sat-bad)",
+  badDim:  "var(--sat-bad-dim)",
+  warn:    "var(--sat-warn)",
+  warnDim: "var(--sat-warn-dim)",
 };
 
-export const ff = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
-export const PAD = 40;
+export const ff = "var(--sat-font)";
+export const PAD = "var(--sat-pad)";

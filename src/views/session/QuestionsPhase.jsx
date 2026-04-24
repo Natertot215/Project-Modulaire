@@ -20,7 +20,7 @@ export default function QuestionsPhase({
   return (
     <div style={{ minHeight: "100vh", background: C.bg, fontFamily: ff, color: C.tx, display: "flex", flexDirection: "column" }}>
       {confirmHome && (
-        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,.6)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ position: "fixed", inset: 0, background: "var(--sat-overlay)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center" }}>
           <div style={{ background: C.sf, border: `1px solid ${C.bdr}`, borderRadius: 12, padding: 28, maxWidth: 400, width: "90%", textAlign: "center" }}>
             <p style={{ fontSize: 15, fontWeight: 600, margin: "0 0 6px" }}>Leave session?</p>
             <p style={{ fontSize: 13, color: C.tx3, margin: "0 0 24px" }}>{answeredCount} question{answeredCount !== 1 ? "s" : ""} attempted.</p>
@@ -33,7 +33,7 @@ export default function QuestionsPhase({
         </div>
       )}
 
-      <div style={{ padding: `20px ${PAD}px 8px`, display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", flexShrink: 0 }}>
+      <div style={{ padding: `20px ${PAD} 8px`, display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", flexShrink: 0 }}>
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
           <button onClick={onConfirmHome} title="Home" style={{ background: C.sf2, border: `1px solid ${C.bdr}`, borderRadius: 6, color: C.tx3, fontFamily: ff, fontSize: 12, cursor: "pointer", padding: "5px 10px", width: 36, display: "flex", alignItems: "center", justifyContent: "center" }}>⌂</button>
           {showSkill && <span style={{ background: C.sf2, border: `1px solid ${C.bdr}`, borderRadius: 6, padding: "5px 12px", fontFamily: ff, fontSize: 12, color: C.tx2, cursor: "default" }}>{qSkill || "Skill"}</span>}
@@ -57,7 +57,7 @@ export default function QuestionsPhase({
         </div>
       </div>
 
-      <div style={{ padding: `0 ${PAD}px 16px`, display: "grid", gridTemplateColumns: `repeat(${mod.count}, 1fr)`, gap: 3, flexShrink: 0 }}>
+      <div style={{ padding: `0 ${PAD} 16px`, display: "grid", gridTemplateColumns: `repeat(${mod.count}, 1fr)`, gap: 3, flexShrink: 0 }}>
         {Array.from({ length: mod.count }, (_, i) => {
           const gi = mod.start + i;
           const cur = gi === qIdx, ans = answers[gi] != null, fl = flags[gi];
@@ -76,8 +76,8 @@ export default function QuestionsPhase({
         })}
       </div>
 
-      <div style={{ flex: 1, padding: `0 ${PAD}px 28px`, width: "100%", boxSizing: "border-box" }}>
-        <style>{`.hl-passage ::selection { background: rgba(212,184,118,0.35); } .hl-passage mark { background: rgba(212,184,118,0.3); color: ${C.tx}; border-radius: 2px; }`}</style>
+      <div style={{ flex: 1, padding: `0 ${PAD} 28px`, width: "100%", boxSizing: "border-box" }}>
+        <style>{`.hl-passage ::selection { background: var(--sat-warn-sel); } .hl-passage mark { background: var(--sat-warn-mark); color: var(--sat-tx); border-radius: 2px; }`}</style>
         <div style={{ display: wide ? "grid" : "block", gridTemplateColumns: wide ? "1fr 380px" : undefined, gap: wide ? 24 : undefined }}>
           <div>
             <div style={{ padding: "16px 20px", background: C.sf, borderRadius: 8, border: `1px solid ${C.bdr}`, marginBottom: 16 }}>

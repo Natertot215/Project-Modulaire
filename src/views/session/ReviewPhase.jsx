@@ -17,7 +17,7 @@ export default function ReviewPhase({
 
   return (
     <div style={{ minHeight: "100vh", background: C.bg, fontFamily: ff, color: C.tx, display: "flex", flexDirection: "column" }}>
-      <div style={{ padding: `20px ${PAD}px 8px`, display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", flexShrink: 0 }}>
+      <div style={{ padding: `20px ${PAD} 8px`, display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", flexShrink: 0 }}>
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
           <button onClick={onHome} style={{ background: C.sf2, border: `1px solid ${C.bdr}`, borderRadius: 6, color: C.tx3, fontFamily: ff, fontSize: 12, cursor: "pointer", padding: "5px 10px", width: 36, display: "flex", alignItems: "center", justifyContent: "center" }}>⌂</button>
           <ModuleDropdown modules={modules} currentMod={currentMod} onSelect={(mi) => { onSetCurrentMod(mi); onSetQIdx(modules[mi].start); }} />
@@ -32,7 +32,7 @@ export default function ReviewPhase({
         </div>
       </div>
 
-      <div style={{ padding: `0 ${PAD}px 16px`, display: "grid", gridTemplateColumns: `repeat(${mod.count}, 1fr)`, gap: 3, flexShrink: 0 }}>
+      <div style={{ padding: `0 ${PAD} 16px`, display: "grid", gridTemplateColumns: `repeat(${mod.count}, 1fr)`, gap: 3, flexShrink: 0 }}>
         {Array.from({ length: mod.count }, (_, i) => {
           const gi = mod.start + i;
           const cur = gi === qIdx;
@@ -54,7 +54,7 @@ export default function ReviewPhase({
         })}
       </div>
 
-      <div style={{ flex: 1, padding: `0 ${PAD}px 28px`, width: "100%", boxSizing: "border-box" }}>
+      <div style={{ flex: 1, padding: `0 ${PAD} 28px`, width: "100%", boxSizing: "border-box" }}>
         <div style={{ fontSize: 11, color: C.tx2, fontWeight: 600, textTransform: "uppercase", letterSpacing: ".07em", marginBottom: 8 }}>{qSkill || "Skill"}</div>
         <div style={{ display: wide ? "grid" : "block", gridTemplateColumns: wide ? "1fr 380px" : undefined, gap: wide ? 24 : undefined }}>
           <div>
