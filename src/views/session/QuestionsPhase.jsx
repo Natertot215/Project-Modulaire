@@ -35,9 +35,9 @@ export default function QuestionsPhase({
 
       <div style={{ padding: `20px ${PAD} 8px`, display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", flexShrink: 0 }}>
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-          <button onClick={onConfirmHome} title="Home" style={{ background: C.sf2, border: `1px solid ${C.bdr}`, borderRadius: 6, color: C.tx3, fontFamily: ff, fontSize: 12, cursor: "pointer", padding: "5px 10px", width: 36, display: "flex", alignItems: "center", justifyContent: "center" }}>⌂</button>
+          <button onClick={onConfirmHome} title="Home" style={{ background: C.sf2, border: `1px solid ${C.bdr}`, borderRadius: 6, color: C.tx3, fontFamily: ff, fontSize: 12, cursor: "pointer", padding: "5px 10px", width: 36, display: "flex", alignItems: "center", justifyContent: "center", transition: "all .12s" }}>⌂</button>
           {showSkill && <span style={{ background: C.sf2, border: `1px solid ${C.bdr}`, borderRadius: 6, padding: "5px 12px", fontFamily: ff, fontSize: 12, color: C.tx2, cursor: "default" }}>{qSkill || "Skill"}</span>}
-          <button onClick={onGoBreak} style={{ background: C.sf2, border: `1px solid ${C.bdr}`, borderRadius: 6, color: C.tx2, fontFamily: ff, fontSize: 12, cursor: "pointer", padding: "5px 12px" }}>Summary</button>
+          <button onClick={onGoBreak} style={{ background: C.sf2, border: `1px solid ${C.bdr}`, borderRadius: 6, color: C.tx2, fontFamily: ff, fontSize: 12, cursor: "pointer", padding: "5px 12px", transition: "all .12s" }}>Summary</button>
           <ModuleDropdown modules={modules} currentMod={currentMod} onSelect={(mi) => { onSetCurrentMod(mi); onSetQIdx(modules[mi].start); }} />
         </div>
         <span style={{ fontSize: 13, fontWeight: 600, textAlign: "center" }}>
@@ -48,11 +48,13 @@ export default function QuestionsPhase({
             background: highlighting ? C.selDim : C.sf2, border: `1px solid ${highlighting ? C.tx2 : C.bdr}`,
             borderRadius: 6, padding: "5px 10px", cursor: "pointer", fontFamily: ff,
             fontSize: 12, color: highlighting ? C.sel : C.tx3, minWidth: 36, textAlign: "center",
+            transition: "all .12s",
           }} title="Highlight">✎</button>
           <button onClick={onToggleFlag} style={{
             background: flags[qIdx] ? C.warnDim : C.sf2, border: `1px solid ${flags[qIdx] ? C.warn : C.bdr}`,
             borderRadius: 6, padding: "5px 10px", cursor: "pointer", fontFamily: ff,
             fontSize: 12, color: flags[qIdx] ? C.warn : C.tx3, minWidth: 80, textAlign: "center",
+            transition: "all .12s",
           }}>{flags[qIdx] ? "⚑ Flagged" : "⚐ Flag"}</button>
         </div>
       </div>
@@ -71,6 +73,7 @@ export default function QuestionsPhase({
               border: `1px solid ${bd}`, background: bg, color: co,
               cursor: "pointer", fontFamily: ff,
               display: "flex", alignItems: "center", justifyContent: "center",
+              transition: "all .12s",
             }}>{i + 1}</button>
           );
         })}
@@ -120,6 +123,7 @@ export default function QuestionsPhase({
                       border: `1px solid ${crossed ? C.tx3 : C.bdr2}`, background: crossed ? C.sf2 : "transparent",
                       color: crossed ? C.tx2 : C.tx3, cursor: "pointer", fontFamily: ff,
                       display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+                      transition: "all .12s",
                     }}>✕</span>
                   </button>
                 );

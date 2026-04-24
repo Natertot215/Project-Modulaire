@@ -36,6 +36,7 @@ function ReviewFromHistory({ session: s, idx: ri, onNav, onBack }) {
               border: `1.5px solid ${cur ? C.tx2 : bd}`, background: cur ? C.sf3 : "transparent", color: co,
               cursor: "pointer", fontFamily: ff,
               display: "flex", alignItems: "center", justifyContent: "center",
+              transition: "all .12s",
             }}>{i + 1}</button>
           );
         })}
@@ -85,16 +86,16 @@ function SessionDetail({ session: s, onBack, onDelete, onReview }) {
   const hasReview = s.reviewData && s.reviewData.length > 0;
   return (
     <Shell wide>
-      <div style={{ maxWidth: 700, margin: "0 auto" }}>
+      <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <Back onClick={onBack} label="History" />
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
           <div>
-            <h1 style={{ fontSize: 20, fontWeight: 700, margin: "0 0 4px" }}>{s.type}</h1>
-            <p style={{ color: C.tx3, fontSize: 13, margin: 0 }}>{s.date} · {s.attempted} attempted</p>
+            <h1 style={{ fontSize: 24, fontWeight: 700, margin: "0 0 6px" }}>{s.type}</h1>
+            <p style={{ color: C.tx3, fontSize: 14, margin: 0 }}>{s.date} · {s.attempted} attempted</p>
           </div>
           <div style={{ textAlign: "right" }}>
-            <div style={{ fontSize: 28, fontWeight: 700, color: C.tx }}>{pct}%</div>
-            <div style={{ fontSize: 12, color: C.tx3 }}>{s.correct}/{s.attempted}</div>
+            <div style={{ fontSize: 32, fontWeight: 700, color: C.tx }}>{pct}%</div>
+            <div style={{ fontSize: 13, color: C.tx3 }}>{s.correct}/{s.attempted}</div>
           </div>
         </div>
         <div style={{ background: C.sf, border: `1px solid ${C.bdr}`, borderRadius: 10, padding: 20, marginTop: 24 }}>
@@ -107,7 +108,7 @@ function SessionDetail({ session: s, onBack, onDelete, onReview }) {
               else if (correct) { bd = C.ok; co = C.ok; }
               else { bd = C.bad; co = C.bad; }
               return (
-                <div key={i} style={{ padding: "7px 0", borderRadius: 5, textAlign: "center", fontSize: 10, fontWeight: 600, background: "transparent", color: co, border: `1.5px solid ${bd}` }}>{i + 1}</div>
+                <div key={i} style={{ padding: "8px 0", borderRadius: 5, textAlign: "center", fontSize: 11, fontWeight: 600, background: "transparent", color: co, border: `1.5px solid ${bd}` }}>{i + 1}</div>
               );
             })}
           </div>
@@ -149,19 +150,19 @@ export default function HistoryView({ history, onDelete }) {
 
   return (
     <Shell>
-      <div style={{ maxWidth: 620, margin: "0 auto" }}>
-        <h1 style={{ fontSize: 22, fontWeight: 700, margin: "0 0 4px" }}>History</h1>
-        <p style={{ color: C.tx3, fontSize: 13, margin: "0 0 36px" }}>Past sessions and scores.</p>
-        {history.length === 0 && <p style={{ color: C.tx3, fontSize: 14 }}>No sessions yet.</p>}
-        <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+      <div style={{ maxWidth: 680, margin: "0 auto" }}>
+        <h1 style={{ fontSize: 26, fontWeight: 700, margin: "0 0 6px" }}>History</h1>
+        <p style={{ color: C.tx3, fontSize: 14, margin: "0 0 36px" }}>Past sessions and scores.</p>
+        {history.length === 0 && <p style={{ color: C.tx3, fontSize: 15 }}>No sessions yet.</p>}
+        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
           {history.map((h) => (
-            <div key={h.id} style={{ display: "flex", alignItems: "center", background: C.sf, border: `1px solid ${C.bdr}`, borderRadius: 8, overflow: "hidden" }}>
-              <button onClick={() => setViewing(h)} style={{ flex: 1, display: "grid", gridTemplateColumns: "72px 1fr 64px", padding: "14px 16px", alignItems: "center", background: "transparent", border: "none", cursor: "pointer", fontFamily: ff, textAlign: "left" }}>
-                <span style={{ color: C.tx3, fontSize: 13 }}>{h.date}</span>
-                <span style={{ color: C.tx2, fontSize: 13 }}>{h.type}</span>
-                <span style={{ textAlign: "right", fontWeight: 600, fontSize: 14, color: C.tx }}>{h.correct}/{h.attempted}</span>
+            <div key={h.id} style={{ display: "flex", alignItems: "center", background: C.sf, border: `1px solid ${C.bdr}`, borderRadius: 9, overflow: "hidden" }}>
+              <button onClick={() => setViewing(h)} style={{ flex: 1, display: "grid", gridTemplateColumns: "80px 1fr 72px", padding: "16px 18px", alignItems: "center", background: "transparent", border: "none", cursor: "pointer", fontFamily: ff, textAlign: "left", transition: "all .12s" }}>
+                <span style={{ color: C.tx3, fontSize: 14 }}>{h.date}</span>
+                <span style={{ color: C.tx2, fontSize: 14 }}>{h.type}</span>
+                <span style={{ textAlign: "right", fontWeight: 600, fontSize: 15, color: C.tx }}>{h.correct}/{h.attempted}</span>
               </button>
-              <button onClick={() => onDelete(h.id)} title="Delete" style={{ width: 44, alignSelf: "stretch", background: "transparent", border: "none", borderLeft: `1px solid ${C.bdr}`, cursor: "pointer", color: C.tx3, fontSize: 14, fontFamily: ff, display: "flex", alignItems: "center", justifyContent: "center" }}>×</button>
+              <button onClick={() => onDelete(h.id)} title="Delete" style={{ width: 48, alignSelf: "stretch", background: "transparent", border: "none", borderLeft: `1px solid ${C.bdr}`, cursor: "pointer", color: C.tx3, fontSize: 16, fontFamily: ff, display: "flex", alignItems: "center", justifyContent: "center", transition: "all .12s" }}>×</button>
             </div>
           ))}
         </div>

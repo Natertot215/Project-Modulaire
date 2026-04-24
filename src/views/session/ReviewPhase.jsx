@@ -19,7 +19,7 @@ export default function ReviewPhase({
     <div style={{ minHeight: "100vh", background: C.bg, fontFamily: ff, color: C.tx, display: "flex", flexDirection: "column" }}>
       <div style={{ padding: `20px ${PAD} 8px`, display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", flexShrink: 0 }}>
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-          <button onClick={onHome} style={{ background: C.sf2, border: `1px solid ${C.bdr}`, borderRadius: 6, color: C.tx3, fontFamily: ff, fontSize: 12, cursor: "pointer", padding: "5px 10px", width: 36, display: "flex", alignItems: "center", justifyContent: "center" }}>⌂</button>
+          <button onClick={onHome} style={{ background: C.sf2, border: `1px solid ${C.bdr}`, borderRadius: 6, color: C.tx3, fontFamily: ff, fontSize: 12, cursor: "pointer", padding: "5px 10px", width: 36, display: "flex", alignItems: "center", justifyContent: "center", transition: "all .12s" }}>⌂</button>
           <ModuleDropdown modules={modules} currentMod={currentMod} onSelect={(mi) => { onSetCurrentMod(mi); onSetQIdx(modules[mi].start); }} />
         </div>
         <span style={{ fontSize: 13, fontWeight: 600, textAlign: "center" }}>
@@ -49,6 +49,7 @@ export default function ReviewPhase({
               border: `1.5px solid ${cur ? C.tx2 : bd}`, background: cur ? C.sf3 : "transparent", color: co,
               cursor: "pointer", fontFamily: ff,
               display: "flex", alignItems: "center", justifyContent: "center",
+              transition: "all .12s",
             }}>{i + 1}</button>
           );
         })}

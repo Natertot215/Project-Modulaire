@@ -28,23 +28,23 @@ export default function BreakPhase({
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, maxWidth: gridW, margin: "0 auto" }}>
           <button onClick={() => onSetPhase("questions")} style={{
             padding: "12px 0", borderRadius: 8, fontSize: 14, fontFamily: ff, fontWeight: 600,
-            border: `1px solid ${C.bdr}`, background: "transparent", color: C.tx2, cursor: "pointer",
+            border: `1px solid ${C.bdr}`, background: "transparent", color: C.tx2, cursor: "pointer", transition: "all .12s",
           }}>Back to Questions</button>
           {isLastMod || sessionType === "practice" ? (
             <button onClick={onSubmit} style={{
               padding: "12px 0", borderRadius: 8, fontSize: 14, fontFamily: ff, fontWeight: 600,
-              border: `1px solid ${C.bdr}`, background: "transparent", color: C.tx2, cursor: "pointer",
+              border: `1px solid ${C.bdr}`, background: "transparent", color: C.tx2, cursor: "pointer", transition: "all .12s",
             }}>{sessionType === "practice" ? "Submit Practice" : "Submit Test"}</button>
           ) : (
             <button onClick={onNextModule} style={{
               padding: "12px 0", borderRadius: 8, fontSize: 14, fontFamily: ff, fontWeight: 600,
-              border: `1px solid ${C.bdr}`, background: "transparent", color: C.tx2, cursor: "pointer",
+              border: `1px solid ${C.bdr}`, background: "transparent", color: C.tx2, cursor: "pointer", transition: "all .12s",
             }}>Proceed to Next Module</button>
           )}
         </div>
         <button onClick={onRestart} style={{
           background: "none", border: "none", color: C.tx3, fontFamily: ff,
-          fontSize: 13, cursor: "pointer", padding: 0, marginTop: 20,
+          fontSize: 13, cursor: "pointer", padding: 0, marginTop: 20, transition: "color .12s",
         }}>Restart Module</button>
       </div>
     </Shell>

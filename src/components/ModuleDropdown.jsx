@@ -11,6 +11,7 @@ export default function ModuleDropdown({ modules, currentMod, onSelect }) {
         background: C.sf2, border: `1px solid ${C.bdr}`, borderRadius: 6,
         color: C.tx2, fontFamily: ff, fontSize: 12, cursor: "pointer", padding: "5px 12px",
         display: "flex", alignItems: "center", gap: 6,
+        transition: "all .12s",
       }}>
         {cur.label.replace("Reading & Writing", "R&W")}
         <span style={{ fontSize: 10, color: C.tx3 }}>{open ? "▲" : "▼"}</span>
@@ -28,7 +29,7 @@ export default function ModuleDropdown({ modules, currentMod, onSelect }) {
               border: "none", borderBottom: mi < modules.length - 1 ? `1px solid ${C.bdr}` : "none",
               color: mi === currentMod ? C.tx : C.tx2,
               fontFamily: ff, fontSize: 12, fontWeight: mi === currentMod ? 600 : 400,
-              cursor: "pointer",
+              cursor: "pointer", transition: "all .12s",
             }}>{m.label.replace("Reading & Writing", "R&W")}</button>
           ))}
         </div>
