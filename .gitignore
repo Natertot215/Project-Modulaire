@@ -6,4 +6,5 @@ dist
 .vite
 CLAUDE.md
 .mcp.json
+.claude/
 docs/superpowers/

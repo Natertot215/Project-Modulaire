@@ -1,14 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *, *::before, *::after { box-sizing: border-box; }
 
 html, body, #root {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  background: #191919;
-  color: #e8e8e8;
+  background: var(--sat-bg);
+  color: var(--sat-tx);
+  font-family: var(--sat-font);
 }
 
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.hl-passage ::selection { background: var(--sat-warn-sel); }
+.hl-passage mark { background: var(--sat-warn-mark); color: var(--sat-tx); border-radius: 2px; }
